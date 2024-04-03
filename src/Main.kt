@@ -15,10 +15,16 @@ fun main() {
                ░        ░                 ░          ░        ░                
             """)
     println("Bem vindo ao FIZZBUZZ!!! ")
-    println("-----------------")
-    println("MODO 1: Modo Crescente")
-    println("MODO 2: Modo Decrescente em pares")
-    println("-----------------")
+
+    var rpt = true
+
+    while (rpt == true) {
+        println("-----------------")
+        println("1: Modo Crescente")
+        println("2: Modo Decrescente em pares")
+        println("0: SAIR")
+        println("-----------------")
+    println()
     print("Escolha o modo de jogo: ")
 
     val scan=Scanner(System.`in`)
@@ -28,10 +34,34 @@ fun main() {
     when (opt){
         1 -> for (i in 1..100) println(fizzBuzz(i))
         2 -> for (i in 100 downTo 1 step 2) println(fizzBuzz(i))
+        0 -> rpt = false
         else -> {println("Opção inválida!")
 
         }
     }
+        when (rpt){
+            true -> finished()
+            else -> println("Adeus!")
+        }
+
+
+//    for (i in 1..100) { //laço for com o RANGE de 1 à 100
+//        println(fizzBuzz(i)) //invoca a função fizzBuzz para o item do range acima e imprime na tela
+//    }
+//    for (i in 100 downTo 1 step 2) {
+//        println(fizzBuzz(i))
+//    }
+
+
+}
+    println()
+    println()
+    println()
+    println()
+    println()
+    println()
+    println()
+    println()
     println("""
                           ▄████  ▄▄▄       ███▄ ▄███▓▓█████     ▒█████   ██▒   █▓▓█████  ██▀███  
                          ██▒ ▀█▒▒████▄    ▓██▒▀█▀ ██▒▓█   ▀    ▒██▒  ██▒▓██░   █▒▓█   ▀ ▓██ ▒ ██▒
@@ -44,15 +74,6 @@ fun main() {
                               ░       ░  ░       ░      ░  ░       ░ ░        ░     ░  ░   ░     
                                                                              ░                   
                 """.trimIndent())
-
-//    for (i in 1..100) { //laço for com o RANGE de 1 à 100
-//        println(fizzBuzz(i)) //invoca a função fizzBuzz para o item do range acima e imprime na tela
-//    }
-//    for (i in 100 downTo 1 step 2) {
-//        println(fizzBuzz(i))
-//    }
-
-
 }
 
 fun fizzBuzz(i: Int) = when {
@@ -60,4 +81,11 @@ fun fizzBuzz(i: Int) = when {
     i % 3 == 0 -> "Fizz "     //Se divisível por 3
     i % 5 == 0 -> "Buzz "     //Se divisível por 3
     else -> "$i "             //Retorna i se não for divisível por 3, 5 ou 15
+}
+
+fun finished() {
+    println("---------------")
+    println()
+    println("Iniciando novo jogo.")
+    println()
 }
