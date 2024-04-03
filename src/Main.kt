@@ -16,7 +16,7 @@ fun main() {
             """)
     println("Bem vindo ao FIZZBUZZ!!! ")
 
-    var rpt = true
+    var rpt = true  //variável para o while principal, de repetição do jogo
 
     while (rpt == true) {
         println("-----------------")
@@ -32,8 +32,8 @@ fun main() {
     val opt:Int=scan.nextInt()
 
     when (opt){
-        1 -> for (i in 1..100) println(fizzBuzz(i))
-        2 -> for (i in 100 downTo 1 step 2) println(fizzBuzz(i))
+        1 -> for (i in 1..100) println(fizzBuzz(i)) //laço for com o RANGE de 1 à 100, invoca a função fizzBuzz para o item do range acima e imprime na tela
+        2 -> for (i in 100 downTo 1 step 2) println(fizzBuzz(i)) //laço for com range invertido de 100 a 1 e passo 2, invoca a função fizzBuzz para o item do range acima e imprime na tela
         0 -> rpt = false
         else -> {println("Opção inválida!")
 
@@ -83,7 +83,7 @@ fun fizzBuzz(i: Int) = when {
     else -> "$i "             //Retorna i se não for divisível por 3, 5 ou 15
 }
 
-fun finished() {
+fun finished() {    //banner para rodar a cada finalização de modo de jogo
     println("---------------")
     println()
     println("Iniciando novo jogo.")
